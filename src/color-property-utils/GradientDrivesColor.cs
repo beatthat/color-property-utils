@@ -19,6 +19,11 @@ namespace BeatThat
 
 		public Gradient gradient { get { return m_useGradientAsset && m_gradientAsset != null? m_gradientAsset.gradient: m_gradient; } }
 
+		public bool ClearDriven ()
+		{
+			m_hasColor = null; return true;
+		}
+
 		override public void UpdateDisplay()
 		{
 			this.driven.value = this.gradient.Evaluate(this.value);

@@ -3,7 +3,7 @@
 namespace BeatThat
 {
 	/// <summary>
-	/// Set the color on of a target HasColor OnEnable.
+	/// OnEnable sets the color of a target HasColor.
 	/// 
 	/// Useful for multi-state UI layouts: when the layout lands on a new state, 
 	///	that state's (set of) SetColor components can be activated 
@@ -14,14 +14,17 @@ namespace BeatThat
 	/// </summary>
 	public class SetColor : MonoBehaviour, IDrive<HasColor>
 	{
+		#pragma warning disable 169
 		[SerializeField]private HasColor m_hasColor;
 		[SerializeField]private ColorAsset m_colorAsset;
 		[SerializeField]private Color m_color;
 		[SerializeField]private bool m_useColorAsset;
+		#pragma warning restore 169
 
 		public HasColor driven { get { return m_hasColor?? (m_hasColor = GetComponent<HasColor>()); } }
 
 		public object GetDrivenObject() { return this.driven; }
+		public bool ClearDriven() { m_hasColor = null; return true; } 
 
 		public Color color { get { return m_useColorAsset && m_colorAsset != null? m_colorAsset.value: m_color; } }
 

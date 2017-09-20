@@ -1,7 +1,7 @@
 {
     "name": "color-property-utils",
     "scope": "ape",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Components to control color using property interfaces.",
     "main": "index.js",
     "repository": {
@@ -21,7 +21,8 @@
     "homepage": "https://github.com/beatthat/color-property-utils",
     "scripts": {
         "postinstall": "node scripts/postinstall.js",
-        "install:test": "rm -f *.tgz package-lock.json && npm pack && cd test && npm run clean && npm install",
+        "preinstall:test": "rm -f *.tgz",
+        "install:test": "npm pack && cp ${npm_package_name}-${npm_package_version}.tgz ${npm_package_name}-latest.tgz && cd test && npm run clean && npm install",
         "clean": "rm -f *.tgz package-lock.json && cd test && npm run clean",
         "cp:test2src": "cd test && node scripts/cp-test2src.js",
         "overwrite:test2src": "cd test && node scripts/overwrite-test2src.js",
@@ -29,7 +30,7 @@
     },
     "dependencies": {
         "path": "^0.12.7",
-        "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^0.0.9",
+        "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^0.0.38",
         "color-assets": "github:beatthat/color-assets#semver:^0.0.7",
         "properties": "github:beatthat/properties#semver:^0.0.14"
     }
