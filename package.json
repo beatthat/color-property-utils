@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "path": "^0.12.7",
-    "unity-npm-utils": "github:beatthat/unity-npm-utils",
-    "color-assets": "github:beatthat/color-assets#semver:^0.0.7",
-    "properties": "github:beatthat/properties#semver:^0.0.14"
+    "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0",
+    "color-assets": "github:beatthat/color-assets#semver:^1.0.0",
+    "properties": "github:beatthat/properties#semver:^1.0.0"
   },
   "devDependencies": {}
 }
