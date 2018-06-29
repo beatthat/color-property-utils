@@ -1,10 +1,23 @@
-﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace BeatThat.UI.UnityUI
+namespace BeatThat.Properties
 {
-	public class GraphicColor : HasColor 
+    public class GraphicColor : HasColor, IDrive<Graphic>
 	{
+		public object GetDrivenObject ()
+		{
+			return this.graphic;
+		}
+
+		public bool ClearDriven ()
+		{
+			m_graphic = null;
+			return true;
+		}
+			
+		public Graphic driven { get { return this.graphic; } }
+
 		public Graphic m_graphic;
 
 		public override Color value 
@@ -25,3 +38,4 @@ namespace BeatThat.UI.UnityUI
 		}
 	}
 }
+

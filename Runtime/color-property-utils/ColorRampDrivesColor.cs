@@ -1,15 +1,15 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace BeatThat
+namespace BeatThat.Properties
 {
-	/// <summary>
-	/// Use a gradient texture to drive the color of a (sibling) HasColor component.
-	/// Exposes the IHasFloat set_value interface, so this component can be used more easily in transitions (e.g. as an element of a TransitionsElements)
-	/// 
-	/// The gradient is read horizontally, to the texture can be sizes like 32x1. 
-	/// The texture MUST be imported as readable
-	/// </summary>
-	public class ColorRampDrivesColor : HasFloat
+    /// <summary>
+    /// Use a gradient texture to drive the color of a (sibling) HasColor component.
+    /// Exposes the IHasFloat set_value interface, so this component can be used more easily in transitions (e.g. as an element of a TransitionsElements)
+    /// 
+    /// The gradient is read horizontally, to the texture can be sizes like 32x1. 
+    /// The texture MUST be imported as readable
+    /// </summary>
+    public class ColorRampDrivesColor : HasFloat
 	{
 		public HasColor m_hasColor;
 		public Texture2D m_colorRamp;
@@ -53,3 +53,4 @@ namespace BeatThat
 		}
 	}
 }
+

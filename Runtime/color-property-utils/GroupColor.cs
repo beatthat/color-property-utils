@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace BeatThat.UI.UnityUI
+namespace BeatThat.Properties
 {
-	public class GroupColor : HasColor 
+    public class GroupColor : HasColor 
 	{
 		public Color m_color;
 		public HasColor[] m_group;
@@ -22,20 +22,6 @@ namespace BeatThat.UI.UnityUI
 		public override bool sendsValueObjChanged { get { return false; } }
 		public override object valueObj { get { return this.value; } }
 
-//		#region implemented abstract members of HasColor
-//		override protected Color GetColor() 
-//		{
-//			return m_color;
-//		}
-//
-//		override protected void _SetColor(Color c)
-//		{
-//			m_color = c;
-//			foreach(var i in this.group) {
-//				i.color = c;
-//			}
-//		}
-//		#endregion
 
 		public HasColor[] group 
 		{
@@ -49,3 +35,4 @@ namespace BeatThat.UI.UnityUI
 
 	}
 }
+

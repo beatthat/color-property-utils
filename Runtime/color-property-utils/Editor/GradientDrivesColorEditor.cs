@@ -1,9 +1,9 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
-namespace BeatThat
+namespace BeatThat.Properties
 {
-	[CustomEditor(typeof(GradientDrivesColor), true)]
+    [CustomEditor(typeof(GradientDrivesColor), true)]
 	[CanEditMultipleObjects]
 	public class GradientDrivesColorEditor : DisplaysFloatEditor
 	{
@@ -12,8 +12,10 @@ namespace BeatThat
 			var hasColorProp = this.serializedObject.FindProperty("m_hasColor");
 			EditorGUILayout.PropertyField(hasColorProp, new GUIContent("Target", "HasColor component that will be colored by this gradient"));
 
+			PropertyBindingEditor.HandleDrivenProperty<Color> (this.target, hasColorProp, true);
+
 			var valueProp = this.serializedObject.FindProperty("m_value");
-			EditorGUILayout.PropertyField(valueProp);
+			EditorGUILayout.Slider(valueProp, 0f, 1f);
 
 			var useGradientAssetProp = this.serializedObject.FindProperty("m_useGradientAsset");
 
@@ -31,6 +33,7 @@ namespace BeatThat
 			var updateDisplayOnEnableProp = this.serializedObject.FindProperty("m_updateDisplayOnEnable");
 			EditorGUILayout.PropertyField(updateDisplayOnEnableProp);
 
+			EditPropertyBindings (this.serializedObject, this.target.GetType());
 
 			this.serializedObject.ApplyModifiedProperties();
 

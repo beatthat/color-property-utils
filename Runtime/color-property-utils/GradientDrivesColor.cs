@@ -1,12 +1,13 @@
-﻿using UnityEngine;
+using BeatThat.ColorAssets;
+using UnityEngine;
 
-namespace BeatThat
+namespace BeatThat.Properties
 {
-	/// <summary>
-	/// Use a gradient to drive the color of a (sibling) HasColor component.
-	/// Exposes the IHasFloat set_value interface, so this component can be used more easily in transitions (e.g. as an element of a TransitionsElements)
-	/// </summary>
-	public class GradientDrivesColor : DisplaysFloat, IDrive<HasColor>
+    /// <summary>
+    /// Use a gradient to drive the color of a (sibling) HasColor component.
+    /// Exposes the IHasFloat set_value interface, so this component can be used more easily in transitions (e.g. as an element of a TransitionsElements)
+    /// </summary>
+    public class GradientDrivesColor : DisplaysFloat, IDrive<HasColor>
 	{
 		[SerializeField]private HasColor m_hasColor;
 		[SerializeField]private Gradient m_gradient;
@@ -30,3 +31,4 @@ namespace BeatThat
 		}
 	}
 }
+

@@ -1,6 +1,6 @@
 {
   "name": "color-property-utils",
-  "scope": "ape",
+  "scope": "beatthat",
   "version": "1.0.0",
   "description": "Components to control color using property interfaces.",
   "main": "index.js",
@@ -11,7 +11,9 @@
   "files": [
     "index.js",
     "scripts",
-    "src"
+    "src",
+    "Runtime",
+    "Samples"
   ],
   "author": "larrykirschner@gmail.com",
   "license": "MIT",
@@ -35,7 +37,7 @@
     "path": "^0.12.7",
     "unity-npm-utils": "github:beatthat/unity-npm-utils#semver:^1.0.0",
     "color-assets": "github:beatthat/color-assets#semver:^1.0.0",
-    "properties": "github:beatthat/properties#semver:^1.0.0"
+    "property-bindings": "github:beatthat/property-bindings#semver:^1.0.0"
   },
   "devDependencies": {}
 }
